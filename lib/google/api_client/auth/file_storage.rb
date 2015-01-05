@@ -54,8 +54,7 @@ module Google
       #    Optional authorization instance. If not provided, the authorization
       #    already associated with this instance will be written.
       def write_credentials(auth=nil)
-        storage.authorization = auth unless auth.nil?
-        storage.write_credentials(self.authorization)
+        storage.write_credentials(auth || authorization)
       end
     end
   end
